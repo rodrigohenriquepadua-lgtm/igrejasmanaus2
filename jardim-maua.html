@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ensaios da CCB em Manaus-AM">
+    <title>Jardim Mauá - Ensaios CCB Manaus</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+    .igreja-info {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('santa-etelvina.jpeg');
+    background-size: 100% ; 
+    background-attachment: fixed; 
+    height: 100vh;
+    /* parte para colocar em colunas */
+   
+    flex-direction: column; 
+    align-items: flex-start;
+    /* teste */
+    display: block;
+    
+    justify-content: flex-start; /* Garante que o conteúdo comece na esquerda */
+    padding-top: 20px;
+}
+</style>
+</head>
+<body>
+    <header class ="navbar"> 
+        <div class = "logo">EVENTOS CCB MANAUS</div>  
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ensaios-locais.html">Ensaios Locais</a></li>
+                <li><a href="#">Ensaios Regionais</a></li>
+                <li><a href="#">Testes</a></li>
+                <li><a href="#">Reuniões Técnicas</a></li>
+                <li><a href="calendario-musical.html">Calendário Musical</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+<section class="igreja-info">
+    
+    <div class="igreja-name">
+        <h1>Jardim Mauá</h1>
+    </div>
+
+    <div class="cards-info">
+        
+        <div class="card">
+            <div class="card-header">📅 Quando</div>
+            <div class="card-body">
+                Segundo Sábado do Mês
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">⏰ Horário</div>
+            <div class="card-body">
+                17h
+            </div>
+        </div>
+
+    </div>
+    <div class="map-container-wrapper">
+        <div id="location">
+        </div>
+
+        
+    </div>
+
+
+    </div>
+</section>
+
+<footer class="rodape">
+    <div class="rodape-container">
+
+        <div class="rodape-info">
+            <h3>Mapa de Igrejas - Manaus</h3>
+            <p>Encontre igrejas próximas de você com facilidade.</p>
+        </div>
+
+        <div class="rodape-links">
+            <h4>Links</h4>
+            <a href="index.html">Início</a>
+            <a href="ensaios-locais.html">Buscar Igrejas</a>
+            <a href="#">Contato</a>
+        </div>
+
+        <div class="rodape-contato">
+            <h4>Contato</h4>
+            <p>📍 Manaus - AM</p>
+            <p>📱 WhatsApp</p>
+        </div>
+
+    </div>
+
+    <div class="rodape-bottom">
+        <p>© 2026 - Todos os direitos reservados</p>
+    </div>
+</footer>
+</body>
+</html>

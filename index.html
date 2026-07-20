@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Site dos Ensaios e Eventos Musicais da CCB Manaus-Am">
+    <title>Ensaios CCB Manaus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+</head>
+<body>
+    <header class ="navbar"> 
+        <div class = "logo">EVENTOS CCB MANAUS</div>  
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ensaios-locais.html">Ensaios Locais</a></li>
+                <li><a href="#">Ensaios Regionais</a></li>
+                <li><a href="#">Testes</a></li>
+                <li><a href="#">Reuniões Técnicas</a></li>
+                <li><a href="calendario-musical.html">Calendário Musical</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      
+    </div>
+        </nav>
+    </header>
+    
+   <script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CCB-Manaus</h1>
+            <p> Cantai-lhe um cântico novo: tocai bem e com Júbilo</p>
+            <p> (Salmos 33:3) </p>
+        </div>
+    </section>
+    <div class="buttons">
+        <a href="ensaios-locais.html" class="btn">Ensaios Locais</a>
+        <a href="#" class="btn">Ensaios Regionais</a>
+    </div>
+    
+    <h2 style="text-align:center;">Igrejas em Manaus</h2>
+    <div id="mapa"></div>
+    
+    <script>
+        
+    var map = L.map('mapa').setView([-3.119, -60.021], 12);
+    map.scrollWheelZoom.disable();
+
+map.on('click', function () {
+    map.scrollWheelZoom.enable();
+});
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Mapa'
+    }).addTo(map);
+    </script>
+<footer class="rodape">
+    <div class="rodape-container">
+
+        <div class="rodape-info">
+            <h3>Mapa de Igrejas - Manaus</h3>
+            <p>Encontre igrejas próximas de você com facilidade.</p>
+        </div>
+
+        <div class="rodape-links">
+            <h4>Links</h4>
+            <a href="index.html">Início</a>
+            <a href="ensaios-locais.html">Buscar Igrejas</a>
+            <a href="#">Contato</a>
+        </div>
+
+        <div class="rodape-contato">
+            <h4>Contato</h4>
+            <p>📍 Manaus - AM</p>
+            <p>📱 WhatsApp</p>
+        </div>
+
+    </div>
+
+    <div class="rodape-bottom">
+        <p>© 2026 - Todos os direitos reservados</p>
+    </div>
+</footer>
+</body>
+</html>
