@@ -280,72 +280,6 @@ body{
     transform: translateY(-3px);
 }
 
-.igreja-info {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('santa-etelvina.jpeg');
-    background-size: 100% ; 
-    background-attachment: fixed; 
-    height: 100vh;
-    /* parte para colocar em colunas */
-   
-    flex-direction: column; 
-    align-items: flex-start;
-    /* teste */
-    display: block;
-    
-    justify-content: flex-start; /* Garante que o conteúdo comece na esquerda */
-    padding-top: 20px;
-}
-
-/* título */
-.igreja-name {
-   color: #fff; 
-   display: flex;
-   margin-left: 40px; 
-   margin-top: 40px; 
-   font-family: american typewriter; 
-   font-size: 30px;
-}
-.cards-info {
-    margin-left: 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap; /* quebra no celular */
-}
-
-/* card */
-.card { 
-    width: 260px;
-    border: 2px solid #2c3e50;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #f5f5f5;
-}
-
-/* topo */
-.card-header {
-    background: #bfbfbf;
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #2c3e50;
-}
-
-/* conteúdo */
-.card-body {
-    padding: 25px 15px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* opcional: efeito leve */
-.card {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-}
-
-
-
 /* Reset básico */
 * {
     margin: 0;
@@ -353,38 +287,131 @@ body{
     box-sizing: border-box;
 }
 
-/*parte do mapa de cada igreja*/
-
-/* Container pai (adicione esta classe na div que envolve os cards e o mapa) */
-.map-container-wrapper {
-    display: flex;
-    justify-content: flex-end; /* Empurra o conteúdo para a direita */
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    padding: 20px;
+/* Container Principal */
+.igreja-info {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('santa-etelvina.jpeg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
     
+    /* Usar min-height para o fundo crescer conforme o conteúdo */
+    min-height: 100vh;
+    height: auto;
+    
+    /* Ativa o Flexbox corretamente */
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    padding: 20px 40px;
+    gap: 20px; /* Espaçamento automático entre os blocos */
 }
 
-/* Estilização da Div do Mapa */
-#location {
-    flex: 1;               /* Faz o mapa ocupar o espaço restante à direita */
-    max-width: 500px;      /* Define um limite de largura para não ficar gigante */
-    height: 300px;         /* Altura do mapa */
-    background: #fff;
-    border-radius: 20px;   /* Arredondamento para combinar com seus cards */
+/* Título */
+.igreja-name {
+    color: #fff; 
+    font-family: 'American Typewriter', Courier, monospace; 
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+/* Container que junta Cards e Mapa no Desktop */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+/* Seção de Cards */
+.cards-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo do Card */
+.card { 
+    width: 260px;
     border: 2px solid #2c3e50;
-    overflow: hidden;      /* Corta o iframe para respeitar o border-radius */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    margin-top: -300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Ajuste do Iframe dentro da Div */
+.card-header {
+    background: #bfbfbf;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.card-body {
+    padding: 25px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Container e Estilo do Mapa */
+.map-container-wrapper {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+}
+
+#location {
+    width: 100%;
+    height: 300px; 
+    background: #fff;
+    border-radius: 20px; 
+    border: 2px solid #2c3e50;
+    overflow: hidden; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Removido o margin-top: -300px que causava a sobreposição */
+}
+
 #location iframe {
-    width: 100%;           /* Ocupa 100% da largura da div #location */
-    height: 100%;          /* Ocupa 100% da altura da div #location */
+    width: 100%; 
+    height: 100%; 
     border: none;
 }
-@media (max-width: 768px) {
 
+/* RESPONSIVIDADE MOBILE (Telas até 768px) */
+@media (max-width: 768px) {
+    .igreja-info {
+        padding: 20px 15px;
+        align-items: center; /* Centraliza o conteúdo na tela do celular */
+    }
+
+    .igreja-name {
+        margin-top: 10px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Empilha os cards acima do mapa no celular */
+        align-items: center;
+        gap: 25px;
+    }
+
+    .cards-info {
+        width: 100%;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Card ocupa a largura disponível no celular */
+        max-width: 320px;
+    }
+
+    .map-container-wrapper {
+        max-width: 100%;
+    }
 }
