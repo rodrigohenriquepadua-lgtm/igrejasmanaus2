@@ -6,7 +6,6 @@
     <meta name="description" content="Ensaios da CCB em Manaus-AM">
     <title>Santa Etelvina - Ensaios CCB Manaus</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header class="navbar"> 
@@ -33,27 +32,30 @@
         <h1>Santa Etelvina</h1>
     </div>
 
-    <div class="cards-info">
-        <div class="card">
-            <div class="card-header">📅 Quando</div>
-            <div class="card-body">
-                Segundo Sábado do Mês
+    <!-- Div que envolve cards e mapa para o Flexbox funcionar sem sobreposição -->
+    <div class="content-wrapper">
+        <div class="cards-info">
+            <div class="card">
+                <div class="card-header">📅 Quando</div>
+                <div class="card-body">
+                    Segundo Sábado do Mês
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">⏰ Horário</div>
+                <div class="card-body">
+                    17h
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">⏰ Horário</div>
-            <div class="card-body">
-                17h
+        <div class="map-container-wrapper">
+            <div id="location">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.0251506641927!2d-60.017052046626674!3d-2.9856982769978195!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c18251f7f0377%3A0x76a616b46d521ea0!2sR.%20Juru%C3%A1%2C%20378%20-%20Santa%20Etelvina%2C%20Manaus%20-%20AM%2C%2069059-310!5e0!3m2!1spt-BR!2sbr!4v1777226976301!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">           
+                </iframe>
             </div>
-        </div>
-    </div>
-
-    <div class="map-container-wrapper">
-        <div id="location">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.0251506641927!2d-60.017052046626674!3d-2.9856982769978195!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c18251f7f0377%3A0x76a616b46d521ea0!2sR.%20Juru%C3%A1%2C%20378%20-%20Santa%20Etelvina%2C%20Manaus%20-%20AM%2C%2069059-310!5e0!3m2!1spt-BR!2sbr!4v1777226976301!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">           
-            </iframe>
         </div>
     </div>
 </section>
